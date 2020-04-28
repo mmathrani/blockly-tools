@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html>
 <script src="gen_release_notes.js"></script>
-<body>
-    <h2> Release Notes</h2>
-    <p> Start date: <input type="text" id="startDate" value="YYYY-MM-DD"></p>
-    <p> End date: <input type="text" id="endDate" value="YYYY-MM-DD"></p>
-
     <script>
         function doGen() {
-            var startDate = document.getElementById("startDate").value;
-            var endDate = document.getElementById("endDate").value;
+            var startDate ="2020-04-01";
+            var endDate = "2020-04-29";
             genBlocklyReleaseNotes(startDate, endDate);
         }
 
@@ -17,9 +12,8 @@
         document.getElementById("endDate").value = date.toISOString().split('T')[0];
         getLastMergeDate();
     </script>
-
-    <button type="button" onclick="doGen()">Generate notes</button>
-
+<body onload="doGen()">
+    <h2> Release Notes</h2>
     <h3> Issues closed</h3>
     <p id="issues"></p>
 
