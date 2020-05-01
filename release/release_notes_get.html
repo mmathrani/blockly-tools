@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html>
+<script> https://api.github.com/search/issues?q=repo:google/blockly+is:issue+closed
+
+<script type="text/javascript">
+    var apiUrl = 'https://api.github.com/search/issues?q=repo:google/blockly+is:issue+closed';
+    fetch(apiUrl).then(response => {
+      return response.json();
+    }).then(data => {
+      // Work with JSON data here
+      console.log(data);
+    }).catch(err => {
+      // Do something for an error here
+    });
+</script>
 <script src="gen_release_notes.js"></script>
     <script>
         function doGen() {
